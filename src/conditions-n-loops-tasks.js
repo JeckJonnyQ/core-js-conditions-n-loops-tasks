@@ -200,10 +200,59 @@ function convertToRomanNumerals(num) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
-}
+function convertNumberToString(numberStr) {
+  const string = `${numberStr}`;
+  let res = '';
 
+  for (let i = 0; i < string.length; i += 1) {
+    const space = i === string.length - 1 ? '' : ' ';
+    switch (string[i]) {
+      case '0':
+        res += `zero${space}`;
+        break;
+      case '1':
+        res += `one${space}`;
+        break;
+      case '2':
+        res += `two${space}`;
+        break;
+      case '3':
+        res += `three${space}`;
+        break;
+      case '4':
+        res += `four${space}`;
+        break;
+      case '5':
+        res += `five${space}`;
+        break;
+      case '6':
+        res += `six${space}`;
+        break;
+      case '7':
+        res += `seven${space}`;
+        break;
+      case '8':
+        res += `eight${space}`;
+        break;
+      case '9':
+        res += `nine${space}`;
+        break;
+      case '-':
+        res += `minus${space}`;
+        break;
+      case '.':
+        res += `point${space}`;
+        break;
+      case ',':
+        res += `point${space}`;
+        break;
+      default:
+        break;
+    }
+  }
+
+  return res;
+}
 /**
  * Determines whether a string is a palindrome.
  * In this task, the use of methods of the String and Array classes is not allowed.
